@@ -38,9 +38,19 @@ def square(start, end):
 
 
 def circle(start, end):
-    """Draw circle from start to end."""
-    pass  # TODO
-
+    """
+    Toma la distancia entre los primeros dos inputs como el radio y lo replica 360 veces
+    """
+    up()
+    goto(start.x, start.y)
+    down()
+    
+    for count in range(361):
+        forward(end.x - start.x)
+        up()
+        goto(start.x, start.y)
+        down()
+        left(1)
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
