@@ -2,7 +2,6 @@
 Paint, for drawing shapes.
 
 Exercises
-
 1. Add a color.
 2. Complete circle.
 3. Complete rectangle.
@@ -68,7 +67,18 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    lado = end.x - start.x
+
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3):
+        forward(lado)
+        left(120)
+
+    end_fill()
 
 
 def tap(x, y):
@@ -100,6 +110,7 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('purple'), 'P')
+onkey(lambda: color('yellow'), 'Y')   # nuevo color
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
